@@ -1,4 +1,4 @@
-package cveanalyzer;
+package testes;
 
 import java.io.IOException;
 import org.apache.lucene.analysis.Analyzer;
@@ -9,7 +9,6 @@ import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.TermsEnum;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
