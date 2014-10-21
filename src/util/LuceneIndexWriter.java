@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.StringField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
@@ -60,6 +62,14 @@ public class LuceneIndexWriter {
         
         iwriter.addDocument(doc);
     } // writeObjectToIndex
+    
+    public void writeCveEntryToIndex(String cveid, String description) throws IOException {
+        Document doc = new Document();
+        doc.add(new StringField("cveid", cveid, Field.Store.YES));
+        doc.add(new VectorTextField("cvedescription", description));
+        
+        iwriter.addDocument(doc);
+    }
    
     // TODO: pode-se implementar outros write  para campos específicos //
     
